@@ -1,0 +1,128 @@
+Last login: Sat Apr 24 09:42:23 on ttys000
+joshua-bowmans-macbook-pro:~ joshuabowman$ cd Desktop/
+joshua-bowmans-macbook-pro:Desktop joshuabowman$ mkdir Story
+joshua-bowmans-macbook-pro:Desktop joshuabowman$ cd Story
+joshua-bowmans-macbook-pro:Story joshuabowman$ touch chapter1.txt
+joshua-bowmans-macbook-pro:Story joshuabowman$ open chapter1.txt 
+joshua-bowmans-macbook-pro:Story joshuabowman$ git init
+Initialized empty Git repository in /Users/joshuabowman/Desktop/Story/.git/
+joshua-bowmans-macbook-pro:Story joshuabowman$ ls -a
+.		..		.git		chapter1.txt
+joshua-bowmans-macbook-pro:Story joshuabowman$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	chapter1.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+joshua-bowmans-macbook-pro:Story joshuabowman$ git add chapter1.txt
+joshua-bowmans-macbook-pro:Story joshuabowman$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+	new file:   chapter1.txt
+
+joshua-bowmans-macbook-pro:Story joshuabowman$ git commit -m "Complete Chapter 1"
+[master (root-commit) bcb0e8d] Complete Chapter 1
+ 1 file changed, 1 insertion(+)
+ create mode 100644 chapter1.txt
+joshua-bowmans-macbook-pro:Story joshuabowman$ touch chapter2.txt
+joshua-bowmans-macbook-pro:Story joshuabowman$ touch chapter3.txt
+joshua-bowmans-macbook-pro:Story joshuabowman$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	chapter2.txt
+	chapter3.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+joshua-bowmans-macbook-pro:Story joshuabowman$ git add .
+joshua-bowmans-macbook-pro:Story joshuabowman$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   chapter2.txt
+	new file:   chapter3.txt
+
+joshua-bowmans-macbook-pro:Story joshuabowman$ git commit -m "Complete chapter 2 and 3"
+[master 6223593] Complete chapter 2 and 3
+ 2 files changed, 2 insertions(+)
+ create mode 100644 chapter2.txt
+ create mode 100644 chapter3.txt
+joshua-bowmans-macbook-pro:Story joshuabowman$ git log
+commit 6223593d9f58e62096d54afa40ba7571f72c9be2 (HEAD -> master)
+Author: jmichaelbowman78 <jmichaelbowman@gmail.com>
+Date:   Sat Apr 24 09:55:39 2021 -0500
+
+    Complete chapter 2 and 3
+
+commit bcb0e8da5e110fc13c7dcadeb594a8a88d61b129
+Author: jmichaelbowman78 <jmichaelbowman@gmail.com>
+Date:   Sat Apr 24 09:50:48 2021 -0500
+
+    Complete Chapter 1
+joshua-bowmans-macbook-pro:Story joshuabowman$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   chapter3.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+joshua-bowmans-macbook-pro:Story joshuabowman$ git diff chapter3.txt
+diff --git a/chapter3.txt b/chapter3.txt
+index b703e95..4ef2403 100644
+--- a/chapter3.txt
++++ b/chapter3.txt
+@@ -1 +1 @@
+-IT was the age of hope, it was the winter of despair. 
+\ No newline at end of file
++IT was the age of hope, it was the winter of despair. Ethsepgoje regpijaerg oeoagoia jwrgaoij aeorijger poaergij apoej aweroije pargoi jaerg 
+\ No newline at end of file
+joshua-bowmans-macbook-pro:Story joshuabowman$ git checkout chapter3.txt 
+joshua-bowmans-macbook-pro:Story joshuabowman$ git log
+commit 6223593d9f58e62096d54afa40ba7571f72c9be2 (HEAD -> master)
+Author: jmichaelbowman78 <jmichaelbowman@gmail.com>
+Date:   Sat Apr 24 09:55:39 2021 -0500
+
+    Complete chapter 2 and 3
+
+commit bcb0e8da5e110fc13c7dcadeb594a8a88d61b129
+Author: jmichaelbowman78 <jmichaelbowman@gmail.com>
+Date:   Sat Apr 24 09:50:48 2021 -0500
+
+    Complete Chapter 1
+joshua-bowmans-macbook-pro:Story joshuabowman$ git remote add origin https://github.com/jmichaelbowman78/Story.git
+joshua-bowmans-macbook-pro:Story joshuabowman$ git branch -M main
+joshua-bowmans-macbook-pro:Story joshuabowman$ git push -u origin main
+Username for 'https://github.com': jmichaelbowman78
+Password for 'https://jmichaelbowman78@github.com': 
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (7/7), 627 bytes | 627.00 KiB/s, done.
+Total 7 (delta 0), reused 0 (delta 0)
+To https://github.com/jmichaelbowman78/Story.git
+ * [new branch]      main -> main
+Branch 'main' set up to track remote branch 'main' from 'origin'.
+joshua-bowmans-macbook-pro:Story joshuabowman$ ls
+chapter1.txt	chapter2.txt	chapter3.txt
+joshua-bowmans-macbook-pro:Story joshuabowman$ . ls
+-bash: ????: command not found
+joshua-bowmans-macbook-pro:Story joshuabowman$ ls . 
+chapter1.txt	chapter2.txt	chapter3.txt
+joshua-bowmans-macbook-pro:Story joshuabowman$ cd Desktop
+-bash: cd: Desktop: No such file or directory
+joshua-bowmans-macbook-pro:Story joshuabowman$ 
